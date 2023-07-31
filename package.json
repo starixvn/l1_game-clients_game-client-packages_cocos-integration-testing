@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "start": "nodemon ./src/app.ts",
-    "reg": "npm set registry http://npm.lumigame.com"
+    "reg": "npm set registry http://npm.lumigame.com",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
