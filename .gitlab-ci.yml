@@ -1,0 +1,13 @@
+stages:
+  - test
+  - post-test
+  - deploy
+  - publish
+
+variables:
+  PROJECT_NAME: l1-cocos-integration-tests
+
+include:
+  - project: "ci/common-ci"
+    ref: master
+    file: "npm/publish-npm-ts.gitlab-ci.yml"

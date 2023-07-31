@@ -1,0 +1,21 @@
+{
+  "name": "@sg/cocos-integration-testing",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon ./src/app.ts"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.17",
+    "@types/node": "20.4.5",
+    "@types/socket.io": "3.0.2",
+    "nodemon": "3.0.1",
+    "ts-node": "10.9.1",
+    "typescript": "5.1.6"
+  }
+}
