@@ -1,3 +1,10 @@
+# [1.2.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.1.0...v1.2.0) (2023-08-14)
+
+
+### Features
+
+* add running flag ([7110800](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/7110800188814c68577f9a88112502c92b6d7993))
+
 # [1.1.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.0.2...v1.1.0) (2023-08-14)
 
 
