@@ -1,3 +1,10 @@
+# [1.1.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.0.2...v1.1.0) (2023-08-14)
+
+
+### Features
+
+* implement before-all and before-each hooks ([950ea54](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/950ea5471a9596f56fff0843bd8e81754f47e5d7))
+
 ## [1.0.2](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.0.1...v1.0.2) (2023-07-31)
 
 
