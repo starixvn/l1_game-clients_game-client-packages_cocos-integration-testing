@@ -1,3 +1,4 @@
+import { existsSync, lstatSync } from "fs";
 import { readFile, readdir } from "fs/promises";
 import { join } from "path";
 
@@ -6,23 +7,68 @@ export type RawData = {
   data: Object;
 };
 
-export async function loadJsonFile(
-  directory: string,
-  name: string
-): Promise<RawData> {
-  const path = join(directory, name);
+export async function readJSONFile(path: string): Promise<RawData> {
   const raw = await readFile(path, "utf8");
 
-  return { name, data: JSON.parse(raw) };
+  return { name: path, data: JSON.parse(raw) };
 }
 
-export async function loadJsonFiles(directory: string): Promise<RawData[]> {
-  const files = await readdir(directory);
-  const jsonFiles = files.filter((file) => file.includes(".json"));
+export async function loadJSONInFolder(path: string) {
+  if (!existsSync(path)) {
+    return [];
+  }
 
-  return Promise.all(jsonFiles.map((file) => loadJsonFile(directory, file)));
+  const isDirectory = lstatSync(path).isDirectory();
+
+  if (isDirectory) {
+    const files = await readdir(path);
+
+    return files
+      .filter((file) => file.includes(".json"))
+      .map((file) => join(path, file));
+  }
+
+  return [];
 }
 
-export function loadData(directory: string) {
-  return loadJsonFiles(directory);
+export async function loadJSONFiles(
+  directory: string,
+  beforeEachFromParent = []
+) {
+  const beforeEachName = "before-each";
+  const beforeAllName = "before-all";
+  const beforeEachPath = join(directory, beforeEachName);
+  const beforeAllPath = join(directory, beforeAllName);
+
+  const beforeAll = await loadJSONInFolder(beforeAllPath);
+  const beforeEachFromThis = await loadJSONInFolder(beforeEachPath);
+  const beforeEach = [...beforeEachFromParent, ...beforeEachFromThis];
+  const paths = await readdir(directory);
+  const result = [...beforeAll];
+
+  for (const path of paths) {
+    const currentPath = join(directory, path);
+
+    if ([beforeEachName, beforeAllName].includes(path)) {
+      continue;
+    }
+
+    if (currentPath.includes(".json")) {
+      result.push(...beforeEach, currentPath);
+    }
+
+    if (lstatSync(currentPath).isDirectory()) {
+      const files = await loadJSONFiles(currentPath, beforeEach);
+
+      result.push(...files);
+    }
+  }
+
+  return result;
+}
+
+export async function loadData(directory: string) {
+  const files = await loadJSONFiles(directory);
+
+  return Promise.all(files.map(readJSONFile));
 }
