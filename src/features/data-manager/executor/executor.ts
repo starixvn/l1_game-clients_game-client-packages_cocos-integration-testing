@@ -13,6 +13,8 @@ export function executeJob(
     data: Manager.getTestCase(),
   };
 
+  Manager.running = true;
+
   setInterval(async () => {
     if (
       !job.data ||
@@ -43,8 +45,12 @@ export function executeJob(
     if (job.status === JobStatus.ENDED) {
       debug(job.data.name, "ended");
 
-      job.data = Manager.getTestCase();
-      job.status = JobStatus.STARTING;
+      if (Manager.done()) {
+        Manager.running = false;
+      } else {
+        job.data = Manager.getTestCase();
+        job.status = JobStatus.STARTING;
+      }
     }
   });
 }

@@ -10,6 +10,8 @@ export class Manager {
 
   private static testCaseQueue = new Queue<TestCase>();
 
+  static running = false;
+
   public static async initialize(directory: string) {
     Manager.raw = await loadData(directory);
 
