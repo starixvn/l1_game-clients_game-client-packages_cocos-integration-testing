@@ -45,12 +45,13 @@ export class Connection {
     });
 
     express.all("*", (request, response) => {
-      console.log(request.headers["user-agent"]);
-
       const namespace = request.originalUrl;
       const event = request.method.toLowerCase();
       const payload = request.body;
       const id = Date.now();
+
+      // Ignore browserUserAgent property
+      payload && delete payload.browserUserAgent;
 
       this.receivedEvents.enqueue({ event, payload, namespace });
       this.userConnections[id] = {
