@@ -1,3 +1,10 @@
+## [1.2.1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.2.0...v1.2.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* ignore property browserUserAgent ([c1aa4ad](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/c1aa4ade9fa11fcbb720ec93530b35edad161893))
+
 # [1.2.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.1.0...v1.2.0) (2023-08-14)
 
 
