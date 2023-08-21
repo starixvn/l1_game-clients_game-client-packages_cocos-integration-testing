@@ -57,7 +57,11 @@ export async function loadJSONFiles(
   for (const path of paths) {
     const currentPath = join(directory, path);
 
-    if ([beforeEachName, beforeAllName].includes(path)) {
+    if (
+      [beforeEachName, beforeAllName, afterAllName, afterEachName].includes(
+        path
+      )
+    ) {
       continue;
     }
 
