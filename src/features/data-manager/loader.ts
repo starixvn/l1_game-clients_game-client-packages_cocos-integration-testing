@@ -33,16 +33,24 @@ export async function loadJSONInFolder(path: string) {
 
 export async function loadJSONFiles(
   directory: string,
-  beforeEachFromParent = []
+  beforeEachFromParent = [],
+  afterEachFromParent = []
 ) {
   const beforeEachName = "before-each";
   const beforeAllName = "before-all";
+  const afterEachName = "after-each";
+  const afterAllName = "after-all";
   const beforeEachPath = join(directory, beforeEachName);
   const beforeAllPath = join(directory, beforeAllName);
+  const afterEachPath = join(directory, afterEachName);
+  const afterAllPath = join(directory, afterAllName);
 
   const beforeAll = await loadJSONInFolder(beforeAllPath);
   const beforeEachFromThis = await loadJSONInFolder(beforeEachPath);
+  const afterAll = await loadJSONInFolder(afterAllPath);
+  const afterEachFromThis = await loadJSONInFolder(afterEachPath);
   const beforeEach = [...beforeEachFromParent, ...beforeEachFromThis];
+  const afterEach = [...afterEachFromParent, ...afterEachFromThis];
   const paths = await readdir(directory);
   const result = [...beforeAll];
 
@@ -54,15 +62,17 @@ export async function loadJSONFiles(
     }
 
     if (currentPath.includes(".json")) {
-      result.push(...beforeEach, currentPath);
+      result.push(...beforeEach, currentPath, ...afterEach);
     }
 
     if (lstatSync(currentPath).isDirectory()) {
-      const files = await loadJSONFiles(currentPath, beforeEach);
+      const files = await loadJSONFiles(currentPath, beforeEach, afterEach);
 
       result.push(...files);
     }
   }
+
+  result.push(...afterAll);
 
   return result;
 }
