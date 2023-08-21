@@ -1,3 +1,10 @@
+## [1.2.2](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.2.1...v1.2.2) (2023-08-21)
+
+
+### Bug Fixes
+
+* not required property delayForAction in client executor ([003f39c](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/003f39c889f706652a470aab3a4b295cf808e722))
+
 ## [1.2.1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.2.0...v1.2.1) (2023-08-16)
 
 
