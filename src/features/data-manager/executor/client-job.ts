@@ -15,12 +15,15 @@ export async function executeClient(
 ) {
   const { client } = job.data;
 
-  if (client.delayForAction && client.action) {
+  if (client.delayForAction) {
     debug(job.data.name, `wait for action in ${client.delayForAction} ms`);
 
     await sleep(client.delayForAction);
+  }
 
+  if (client.action) {
     debug(job.data.name, `trigger action ${client.action}`);
+
     await evaluate(client.action);
   }
 
