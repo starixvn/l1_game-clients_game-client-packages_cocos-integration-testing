@@ -1,3 +1,10 @@
+## [1.3.1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.3.0...v1.3.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* exclude after each/all folder ([5e5203a](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/5e5203a1a1220641e1294bde3545625e6706430f))
+
 # [1.3.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.2.2...v1.3.0) (2023-08-21)
 
 
