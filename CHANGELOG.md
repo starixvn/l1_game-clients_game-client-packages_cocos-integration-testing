@@ -1,3 +1,10 @@
+## [1.4.2](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.1...v1.4.2) (2023-08-22)
+
+
+### Bug Fixes
+
+* update log ([000b1a0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/000b1a0b55d5e54e59657279996137abd9d4e6d1))
+
 ## [1.4.1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.0...v1.4.1) (2023-08-22)
 
 
