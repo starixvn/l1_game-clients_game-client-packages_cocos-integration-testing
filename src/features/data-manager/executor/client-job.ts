@@ -40,9 +40,13 @@ export async function executeClient(
     );
 
     const callback = async () => {
-      const result = await evaluate(client.actual);
+      try {
+        const result = await evaluate(client.actual);
 
-      return result === client.expected;
+        return result === client.expected;
+      } catch {
+        return false;
+      }
     };
 
     await waitUntilTrulyCallback(callback);
