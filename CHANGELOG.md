@@ -1,3 +1,10 @@
+# [1.4.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.3.1...v1.4.0) (2023-08-22)
+
+
+### Features
+
+* wait until the client met the expectation ([6abee8f](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/6abee8f4508d8d785894bc29f2bf9ba8cd49e983))
+
 ## [1.3.1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.3.0...v1.3.1) (2023-08-21)
 
 
