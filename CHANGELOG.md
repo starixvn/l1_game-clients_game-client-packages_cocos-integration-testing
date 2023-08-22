@@ -1,3 +1,10 @@
+## [1.4.1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.0...v1.4.1) (2023-08-22)
+
+
+### Bug Fixes
+
+* catch exception when evaluating the actual value ([efd7c8a](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/efd7c8a6dd372653f777070d5e70098337893e02))
+
 # [1.4.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.3.1...v1.4.0) (2023-08-22)
 
 
