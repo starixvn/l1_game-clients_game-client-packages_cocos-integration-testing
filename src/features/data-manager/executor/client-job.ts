@@ -1,6 +1,6 @@
 import { debug } from "../debug";
 import { TestCase } from "../test-case";
-import { Job, sleep } from "./utils";
+import { Job, sleep, waitUntilTrulyCallback } from "./utils";
 
 export interface IClientContext {
   server: boolean;
@@ -31,6 +31,21 @@ export async function executeClient(
     debug(job.data.name, `wait for assert in ${client.delayForAssert} ms`);
 
     await sleep(client.delayForAssert);
+  }
+
+  if (client.waitUntilMetExpectation) {
+    debug(
+      job.data.name,
+      `wait until the value of ${client.actual} to be ${client.actual}`
+    );
+
+    const callback = async () => {
+      const result = await evaluate(client.actual);
+
+      return result === client.expected;
+    };
+
+    await waitUntilTrulyCallback(callback);
   }
 
   if (client.actual) {

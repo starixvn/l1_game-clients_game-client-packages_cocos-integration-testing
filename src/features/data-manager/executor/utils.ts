@@ -25,3 +25,13 @@ export async function delay(test: TestCase) {
     await sleep(test.server?.delay);
   }
 }
+
+export async function waitUntilTrulyCallback(callback: () => Promise<boolean>) {
+  let result = await callback();
+
+  while (!result) {
+    sleep(100);
+
+    result = await callback();
+  }
+}

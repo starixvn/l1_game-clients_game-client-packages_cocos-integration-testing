@@ -16,6 +16,7 @@ export type TestCase = {
   client: {
     delayForAssert?: number;
     delayForAction?: number;
+    waitUntilMetExpectation?: boolean;
     action?: string;
     actual?: string;
     expected?: unknown;
