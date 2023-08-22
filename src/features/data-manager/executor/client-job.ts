@@ -36,14 +36,14 @@ export async function executeClient(
   if (client.waitUntilMetExpectation) {
     debug(
       job.data.name,
-      `wait until the value of ${client.actual} to be ${client.actual}`
+      `wait until the value of ${client.actual} to be ${client.expected}`
     );
 
     const callback = async () => {
       try {
-        const result = await evaluate(client.actual);
+        const actual = await evaluate(client.actual);
 
-        return result === client.expected;
+        return actual === client.expected;
       } catch {
         return false;
       }
