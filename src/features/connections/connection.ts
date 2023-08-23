@@ -111,11 +111,16 @@ export class Connection {
     return new Promise((resolve) => {
       let interval = setInterval(() => {
         const receivedEvent = this.receivedEvents.dequeue();
+
+        if (!receivedEvent) {
+          return;
+        }
+
         const now = Date.now();
 
         if (
-          receivedEvent?.namespace === namespace &&
-          receivedEvent?.event === event &&
+          receivedEvent.namespace === namespace &&
+          receivedEvent.event === event &&
           predicate(receivedEvent.payload)
         ) {
           clearInterval(interval);
