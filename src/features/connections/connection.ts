@@ -15,6 +15,8 @@ export type UserConnection = {
 };
 
 export class Connection {
+  protected static EVENT_LIFE = 30000; // The caching time for the events from clients in milliseconds
+
   protected static userConnections: Record<string, UserConnection> = {};
 
   protected static receivedEvents = new Queue<Event>();
@@ -39,7 +41,12 @@ export class Connection {
         });
 
         userSocket.onAny((event, payload) => {
-          this.receivedEvents.enqueue({ event, payload, namespace });
+          this.receivedEvents.enqueue({
+            event,
+            payload,
+            namespace,
+            timestamp: Date.now(),
+          });
         });
       });
     });
@@ -53,7 +60,12 @@ export class Connection {
       // Ignore browserUserAgent property
       payload && delete payload.browserUserAgent;
 
-      this.receivedEvents.enqueue({ event, payload, namespace });
+      this.receivedEvents.enqueue({
+        event,
+        payload,
+        namespace,
+        timestamp: Date.now(),
+      });
       this.userConnections[id] = {
         namespace,
         publisher: {
@@ -99,6 +111,7 @@ export class Connection {
     return new Promise((resolve) => {
       let interval = setInterval(() => {
         const receivedEvent = this.receivedEvents.dequeue();
+        const now = Date.now();
 
         if (
           receivedEvent?.namespace === namespace &&
@@ -108,10 +121,10 @@ export class Connection {
           clearInterval(interval);
 
           resolve(true);
-        } else {
+        } else if (now - receivedEvent.timestamp < this.EVENT_LIFE) {
           this.receivedEvents.enqueue(receivedEvent);
         }
-      }, 1000);
+      });
     });
   }
 }

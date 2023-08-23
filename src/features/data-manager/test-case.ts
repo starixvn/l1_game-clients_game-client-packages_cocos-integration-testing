@@ -4,6 +4,7 @@ export type Event = {
   namespace: string;
   event: string;
   payload: any;
+  timestamp: number;
 };
 
 export type TestCase = {
