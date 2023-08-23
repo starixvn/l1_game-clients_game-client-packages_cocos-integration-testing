@@ -1,6 +1,6 @@
 {
   "name": "@sg/cocos-integration-testing",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "license": "UNLICENSED",
   "type": "commonjs",
   "types": "dist/index.d.ts",

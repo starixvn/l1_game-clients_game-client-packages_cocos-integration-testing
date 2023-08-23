@@ -1,3 +1,10 @@
+## [1.4.4](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.3...v1.4.4) (2023-08-23)
+
+
+### Bug Fixes
+
+* **connection:** check null in event object ([28ce786](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/28ce7868613541a9c38d752dfe3cab7fa142ea01))
+
 ## [1.4.3](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.2...v1.4.3) (2023-08-23)
 
 
