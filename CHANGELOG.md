@@ -1,3 +1,10 @@
+## [1.4.3](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.2...v1.4.3) (2023-08-23)
+
+
+### Bug Fixes
+
+* **connection:** remove old events after 30s ([c6051d1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/c6051d1ce6552fe8d0f9444112c1d4a1796da476))
+
 ## [1.4.2](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.1...v1.4.2) (2023-08-22)
 
 
