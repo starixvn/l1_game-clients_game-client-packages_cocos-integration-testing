@@ -1,3 +1,10 @@
+# [1.5.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.4...v1.5.0) (2023-08-24)
+
+
+### Features
+
+* add schema.json file ([d1ae47a](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/d1ae47a9d5968e96ee5b1547baa48dcc6fe7f4d6))
+
 ## [1.4.4](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.3...v1.4.4) (2023-08-23)
 
 
