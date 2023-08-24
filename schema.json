@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "@sg/cocos-integration-testing",
+  "$defs": {
+    "event": {
+      "type": "object",
+      "properties": {
+        "namespace": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "payload": {}
+      }
+    },
+    "client": {
+      "type": "object",
+      "description": "Client block",
+      "properties": {
+        "delayForAction": {
+          "type": "number",
+          "description": "The delay time (in milliseconds) to wait before triggering the action",
+          "default": 0
+        },
+        "action": {
+          "type": "string",
+          "description": "The action script",
+          "examples": [
+            "Integration.click('option')",
+            "window.location.reload()"
+          ],
+          "default": ""
+        },
+        "delayForAssert": {
+          "type": "number",
+          "description": "The delay time (in milliseconds) to wait before asserting",
+          "default": 0
+        },
+        "waitUntilMetExpectation": {
+          "type": "boolean",
+          "description": "The waiting flag until the value of the actual equals to expected value",
+          "default": false
+        },
+        "actual": {
+          "type": "string",
+          "description": "The actual script",
+          "examples": ["Integration.label('id')"],
+          "default": ""
+        },
+        "expected": {
+          "description": "The expected value compares with the value of the actual script",
+          "default": ""
+        }
+      }
+    },
+    "server": {
+      "type": "object",
+      "description": "Server block",
+      "properties": {
+        "waitForRequest": {
+          "$ref": "#/$defs/event",
+          "description": "Wait until the client sends a request that matches this object"
+        },
+        "delay": {
+          "type": "number",
+          "description": "The delay time (in milliseconds) before sending the response data to client. It evaluates after 'waitForRequest'"
+        },
+        "response": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        }
+      }
+    },
+    "root": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of unit of test"
+        },
+        "client": {
+          "$ref": "#/$defs/client"
+        },
+        "server": {
+          "$ref": "#/$defs/server"
+        }
+      }
+    }
+  },
+  "type": ["array", "object"],
+  "anyOf": [
+    { "$ref": "#/$defs/root" },
+    {
+      "type": "array",
+      "items": { "$ref": "#/$defs/root" }
+    }
+  ]
+}
