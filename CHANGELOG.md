@@ -1,3 +1,10 @@
+# [1.6.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.5.0...v1.6.0) (2023-08-31)
+
+
+### Features
+
+* throw an exception when executing test timeout ([a71ff09](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/a71ff0984ef793682527ad4154a100c270505955))
+
 # [1.5.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.4.4...v1.5.0) (2023-08-24)
 
 
