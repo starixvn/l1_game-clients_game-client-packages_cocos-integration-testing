@@ -33,7 +33,7 @@ export async function waitUntilTrulyCallback(
   let result = await callback();
 
   while (!result) {
-    sleep(interval);
+    await sleep(interval);
 
     result = await callback();
   }
