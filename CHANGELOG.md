@@ -1,3 +1,10 @@
+## [1.6.1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.6.0...v1.6.1) (2023-08-31)
+
+
+### Bug Fixes
+
+* update sleep method ([ee95ef3](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/ee95ef352952829185ded0b57d91721a05b57b71))
+
 # [1.6.0](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.5.0...v1.6.0) (2023-08-31)
 
 
