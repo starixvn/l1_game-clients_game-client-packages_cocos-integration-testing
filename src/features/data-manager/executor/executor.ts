@@ -36,8 +36,6 @@ export function executeJob(
 
     try {
       await execute(context, job);
-    } catch (error) {
-      console.error(error);
     } finally {
       job.status = JobStatus.ENDED;
     }

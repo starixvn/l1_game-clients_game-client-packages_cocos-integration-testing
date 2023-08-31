@@ -18,6 +18,7 @@ export type TestCase = {
     delayForAssert?: number;
     delayForAction?: number;
     waitUntilMetExpectation?: boolean;
+    waitExpectationTimeout?: number;
     action?: string;
     actual?: string;
     expected?: unknown;

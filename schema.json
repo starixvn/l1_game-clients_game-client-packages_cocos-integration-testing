@@ -42,6 +42,10 @@
           "description": "The waiting flag until the value of the actual equals to expected value",
           "default": false
         },
+        "waitExpectationTimeout": {
+          "type": "number",
+          "default": 0
+        },
         "actual": {
           "type": "string",
           "description": "The actual script",

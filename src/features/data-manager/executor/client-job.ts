@@ -38,8 +38,21 @@ export async function executeClient(
       job.data.name,
       `wait until the value of ${client.actual} to be ${client.expected}`
     );
+    let timeout = 0;
+    const interval = 100;
 
-    const callback = async () => {
+    const checkActualValue = async () => {
+      timeout = timeout + interval;
+
+      if (
+        client.waitExpectationTimeout &&
+        client.waitExpectationTimeout <= timeout
+      ) {
+        throw new Error(
+          `Timeout when waiting until the value of ${client.actual} to be ${client.expected}`
+        );
+      }
+
       try {
         const actual = await evaluate(client.actual);
 
@@ -49,7 +62,7 @@ export async function executeClient(
       }
     };
 
-    await waitUntilTrulyCallback(callback);
+    await waitUntilTrulyCallback(checkActualValue, interval);
   }
 
   if (client.actual) {

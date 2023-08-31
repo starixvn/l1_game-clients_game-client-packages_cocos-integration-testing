@@ -26,11 +26,14 @@ export async function delay(test: TestCase) {
   }
 }
 
-export async function waitUntilTrulyCallback(callback: () => Promise<boolean>) {
+export async function waitUntilTrulyCallback(
+  callback: () => Promise<boolean>,
+  interval = 100
+) {
   let result = await callback();
 
   while (!result) {
-    sleep(100);
+    sleep(interval);
 
     result = await callback();
   }
