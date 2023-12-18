@@ -41,7 +41,7 @@ export class Connection {
         });
 
         userSocket.onAny((event, payload) => {
-          payload.clientSendTime && delete payload.clientSendTime;
+          payload?.clientSendTime && delete payload.clientSendTime
           this.receivedEvents.enqueue({
             event,
             payload,
