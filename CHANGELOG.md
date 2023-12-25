@@ -1,3 +1,15 @@
+## [1.6.2](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.6.1...v1.6.2) (2023-12-25)
+
+
+### Bug Fixes
+
+* add npm registry ([cc74796](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/cc747961a52a47630a0e4988f2dff81ff50382c2))
+* Check null payload, fix ci can not run ([844b1e6](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/844b1e606b9fa4a99c84615cfbb22cfc5dbcee76))
+* ignore property clientSendTime crash game ([4d66b42](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/4d66b422a0414017ba21bc0660f222283e697bc1))
+* increase version ([65a5e25](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/65a5e253a02e6e2a052e0582f630b325a9ea0e1e))
+* revert add npm registry ([2886f98](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/2886f98cc2f98e18ca56a0e2fe591feb11a47229))
+* Revert version ([bed761d](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/commit/bed761d5154c195dd85e67c5d085186b050db1a4))
+
 ## [1.6.1](https://git3.nexdev.net/l1/game-clients/game-client-packages/cocos-integration-testing/compare/v1.6.0...v1.6.1) (2023-08-31)
 
 
